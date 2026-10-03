@@ -1,0 +1,47 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "functions": {
+    "api/checkout.js": {
+      "maxDuration": 120,
+      "includeFiles": "web/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/api/checkout?route=%2F"
+    },
+    {
+      "source": "/return",
+      "destination": "/api/checkout?route=%2Freturn"
+    },
+    {
+      "source": "/cancel",
+      "destination": "/api/checkout?route=%2Fcancel"
+    },
+    {
+      "source": "/style.css",
+      "destination": "/api/checkout?route=%2Fstyle.css"
+    },
+    {
+      "source": "/app.js",
+      "destination": "/api/checkout?route=%2Fapp.js"
+    },
+    {
+      "source": "/api/config",
+      "destination": "/api/checkout?route=%2Fapi%2Fconfig"
+    },
+    {
+      "source": "/api/orders",
+      "destination": "/api/checkout?route=%2Fapi%2Forders"
+    },
+    {
+      "source": "/api/capture",
+      "destination": "/api/checkout?route=%2Fapi%2Fcapture"
+    }
+  ],
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "public"
+}

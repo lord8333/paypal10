@@ -1,0 +1,14 @@
+{
+  "name": "paypal-sem-login",
+  "version": "2.3.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "build": "node --check api/checkout.js && node --check checkout-core.mjs && node --check private-config.mjs && node --check web/app.js && node --check config.server.mjs",
+    "test": "node --test test.mjs",
+    "deploy": "npm run build && npx --yes vercel@latest --prod"
+  }
+}
